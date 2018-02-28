@@ -10,9 +10,17 @@ package concurrent_assignment1.B;
 
 public class Numbers extends Thread{
     
+    //In general, our code should print the numbers 1 to 10 five times each
+    
+   
     public static void main(String args[])
     {
+        
+        //Class T_print extends  Thread, and we should create five instances of class thread to print 
+                                                                //the numbers 1 to 10 five times each
         T_PrintID t1= new T_PrintID(1);
+        
+       //run the process
         t1.start();
         T_PrintID t2= new T_PrintID(2);
         t2.start();

@@ -19,10 +19,13 @@ public class Lazy extends Thread{
     
     java.util.Random rand = new java.util.Random();
     
+    //This method generate the random numbers  of times between 2 to 8
     public int r(){
         return (rand.nextInt(7)+2);
     }
     
+    //Here we defining run method, employing random method
+   
     public void run(){
         int i=0;
         int random=this.r();
@@ -32,11 +35,16 @@ public class Lazy extends Thread{
                 if(this.isInterrupted())
                     break;
                 int a= rand.nextInt(2);
+               
+                //At each iteration, it displays a random message among: 
+             
                 switch (a){
                     case 0:
+                        
                         System.out.println("I am dressing up...\n");
                         break;
                     case 1:
+                        
                         System.out.println("Just a sec, please\n");
                         break;
                     case 2:
@@ -52,9 +60,12 @@ public class Lazy extends Thread{
             }
             i++;
         }while(i<random);
+        
+        //If Lazy finishes before being interrupted, it says 
         if(i==random && !this.isInterrupted())
             System.out.println("I am ready, the early bird catches the worm\n");
         else
+         //If Hurry interrupts Lazy before it is finished, Lazy claims: 
             System.out.println("That's not cricket, please play the game!\n");
     }
 
